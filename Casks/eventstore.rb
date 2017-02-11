@@ -7,11 +7,10 @@ cask 'eventstore' do
   name 'Event Store'
   homepage 'https://geteventstore.com/'
 
-  binary "#{staged_path}/eventstore", target: "eventstore"
-  binary "#{staged_path}/eventstore-testclient", target: "eventstore-testclient"
+  binary "#{staged_path}/eventstore", target: 'eventstore'
+  binary "#{staged_path}/eventstore-testclient", target: 'eventstore-testclient'
 
   preflight do
-
     IO.write "#{staged_path}/eventstore", <<-EOS.undent
       #!/bin/sh
       cd "#{staged_path}/EventStore-OSS-MacOSX-v#{version}"
